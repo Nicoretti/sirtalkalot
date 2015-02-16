@@ -27,9 +27,20 @@ __author__ = 'Nicola Coretti'
 __email_ = 'nico.coretti@gmail.com'
 
 import json
+import logging
 import collections
 import slackapi.api
 import websocket.client
+
+# Set up logging
+LOGGER = logging.getLogger()
+formatter = logging.Formatter('%(levelname)s: - %(module)s - %(funcName)s - Message: %(message)s')
+stream_handler = logging.StreamHandler()
+stream_handler.setLevel(logging.DEBUG)
+stream_handler.setFormatter(formatter)
+LOGGER.addHandler(stream_handler)
+LOGGER.setLevel(logging.DEBUG)
+
 
 # TODO: add logger output!
 class SlackBot(object):
@@ -50,14 +61,18 @@ class SlackBot(object):
         # therefore it wants to get a ping every once in a while, we need this timeout to
         # keep track when we have to ping again.
         self._ping_timeout = 10
+        # TODO: add reate limit control
+        # self._rate_limit in ms
 
 
     def connect(self):
+        LOGGER.info('Connecting to slack server')
         rtm_start_response = self._slack_api.call("rtm.start")
         rtm_websocket_url = rtm_start_response.data["url"]
         self._websocket_client = websocket.client.WsClient(rtm_websocket_url)
         self._websocket_client.connect()
         self._websocket_client.register_message_received_callback(self._received_message)
+        LOGGER.debug('Connection to slack server established')
 
 
     def run_forever(self):
@@ -65,19 +80,18 @@ class SlackBot(object):
 
 
     def disconnect(self):
-        pass
+        LOGGER.info('Closed connection')
 
 
     def _received_message(self, message):
         # might add the utf-8 decoding here so subclasses dont have to deal
         # with this issue
-        pass
+        LOGGER.debug('Received message: {0}'.format(message))
 
 
     def _connection_lost(self):
-        # log disconnect
+        LOGGER.debug('Connection lost')
         self.connect()
-        pass
 
 
 class EchoBot(SlackBot):
@@ -88,11 +102,10 @@ class EchoBot(SlackBot):
     def __init__(self, authentication_token):
         super(EchoBot, self).__init__(authentication_token)
 
+
     def _received_message(self, message):
         message = json.loads(message.decode("utf-8"))
-        if ('type' in message) and not (message['type'] == 'message'):
-            pass
-        else:
+        if ('type' in message) and (message['type'] == 'message'):
             response_ditc = {}
             response_ditc['id'] = 1
             if 'text' in message:
@@ -104,6 +117,8 @@ class EchoBot(SlackBot):
                 response_ditc['channel'] = message['channel']
             json_response = json.dumps(response_ditc)
             self._websocket_client.send(json_response)
+        else:
+            pass
 
 
 class SirTalkALot(SlackBot):
@@ -136,7 +151,6 @@ class SirTalkALot(SlackBot):
 
 if __name__ == "__main__":
     api_token = 'Your API-Token goes here'
-    api_token = 'xoxb-3171438313-1v5ei3JGK3nabyTiMDCHK5Ek'
     bot = EchoBot(api_token)
     bot.connect()
     bot.run_forever()
