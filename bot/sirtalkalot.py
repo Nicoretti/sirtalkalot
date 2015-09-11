@@ -151,6 +151,7 @@ class SirTalkALot(SlackBot):
 
 if __name__ == "__main__":
     api_token = 'Your API-Token goes here'
+    api_token = 'xoxb-3171438313-fK52hNR3cz55KZjAMDWNIgI9'
     bot = EchoBot(api_token)
     bot.connect()
     bot.run_forever()
