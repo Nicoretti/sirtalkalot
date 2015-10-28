@@ -1,6 +1,6 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 #
-# Copyright (c) 2014, Nicola Coretti
+# Copyright (c) 2015, Nicola Coretti
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -25,25 +25,5 @@
 __version__ = "0.0.1"
 __author__ = 'Nicola Coretti'
 __email_ = 'nico.coretti@gmail.com'
-
-import logging
-import ws4py.client.threadedclient
-
-LOGGER = logging.getLogger(__name__)
-
-class WsClient(ws4py.client.threadedclient.WebSocketClient):
-
-    def opened(self):
-        LOGGER.debug('websocket connection opened')
-
-    def closed(self, code, reason):
-        LOGGER.debug('websocket connection closed')
-
-    def register_message_received_callback(self, callback):
-        self._message_recieved_callback = callback
-        LOGGER.debug('registered message received callback. Callback: {0}'.format(callback))
-
-    def received_message(self, message):
-        LOGGER.debug('Received message, message: {0}'.format(message))
-        self._message_recieved_callback(message.data)
+__all__ = ['bots_tests', 'services_tests', 'websocket_tests']
 

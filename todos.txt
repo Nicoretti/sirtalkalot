@@ -1,8 +1,0 @@
-Add Syslog/Nt logger
-Create main loop / SirTalkAlot Deamon
-Add more tests
-Provide config to create an egg
-Provide config to install package
-Add comments
-Add logging to slackapi
-Add own websocket client
