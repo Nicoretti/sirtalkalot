@@ -4,6 +4,10 @@ SirTalkAlot
 .. image:: https://travis-ci.org/Nicoretti/sirtalkalot.svg?branch=master
     :target: https://travis-ci.org/Nicoretti/sirtalkalot
 
+
+.. image:: https://coveralls.io/repos/Nicoretti/sirtalkalot/badge.svg?branch=master&service=github
+  :target: https://coveralls.io/github/Nicoretti/sirtalkalot?branch=master
+
 .. image:: https://readthedocs.org/projects/sirtalkalot/badge/?version=latest
     :target: http://sirtalkalot.readthedocs.org/en/latest/?badge=latest
     :alt: Documentation Status
