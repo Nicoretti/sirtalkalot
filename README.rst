@@ -1,12 +1,8 @@
-.. image:: https://badge.waffle.io/Nicoretti/sirtalkalot.png?label=ready&title=Ready 
- :target: https://waffle.io/Nicoretti/sirtalkalot
- :alt: 'Stories in Ready'
 SirTalkAlot
 ===========
 
 .. image:: https://travis-ci.org/Nicoretti/sirtalkalot.svg?branch=master
     :target: https://travis-ci.org/Nicoretti/sirtalkalot
-
 
 .. image:: https://coveralls.io/repos/Nicoretti/sirtalkalot/badge.svg?branch=master&service=github
   :target: https://coveralls.io/github/Nicoretti/sirtalkalot?branch=master
@@ -14,6 +10,10 @@ SirTalkAlot
 .. image:: https://readthedocs.org/projects/sirtalkalot/badge/?version=latest
     :target: http://sirtalkalot.readthedocs.org/en/latest/?badge=latest
     :alt: Documentation Status
+
+.. image:: https://badge.waffle.io/Nicoretti/sirtalkalot.png?label=backlog&title=Backlog
+    :target: https://waffle.io/Nicoretti/sirtalkalot
+    :alt: 'Backlog'
 
 
 SirTalkAlot is a Slack (RTM) based bot which provides a simple service based slack bot.
