@@ -1,3 +1,6 @@
+.. image:: https://badge.waffle.io/Nicoretti/sirtalkalot.png?label=ready&title=Ready 
+ :target: https://waffle.io/Nicoretti/sirtalkalot
+ :alt: 'Stories in Ready'
 SirTalkAlot
 ===========
 
