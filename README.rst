@@ -1,6 +1,13 @@
 SirTalkAlot
 ===========
 
+.. image:: https://travis-ci.org/Nicoretti/sirtalkalot.svg?branch=master
+:target: https://travis-ci.org/Nicoretti/sirtalkalot
+
+.. image:: https://readthedocs.org/projects/sirtalkalot/badge/?version=latest
+:target: http://sirtalkalot.readthedocs.org/en/latest/?badge=latest
+    :alt: Documentation Status
+
 SirTalkAlot is a Slack (RTM) based bot which provides a simple service based slack bot.
 
 Project Structure
