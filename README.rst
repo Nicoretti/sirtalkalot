@@ -11,7 +11,7 @@ SirTalkAlot
 SirTalkAlot is a Slack (RTM) based bot which provides a simple service based slack bot.
 
 Project Structure
-+++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++
 The project is split into 3 different modules.
 
 * bot
@@ -19,7 +19,7 @@ The project is split into 3 different modules.
 * websocket
 
 bot
-++++
++++
 TBD
 
 services
