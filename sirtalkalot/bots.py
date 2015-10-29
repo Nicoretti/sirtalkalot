@@ -23,10 +23,13 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 import json
-import docopt
 import logging
-from slackapi import SlackApi
 from collections import defaultdict
+
+import docopt
+
+from slackapi import SlackApi
+
 from sirtalkalot import services
 from sirtalkalot import websocket
 
@@ -148,7 +151,7 @@ class SirTalkALot(SlackBot):
 
         :param authentication_token: which will be used to authenticate against the slack api.
         """
-        self._ws_client = websocket.BasicWebSocketHandler()
+        super().__init__(authentication_token, websocket.BasicWebSocketHandler)
         self._authentication_token = authentication_token
         self._slack_api = SlackApi(self._authentication_token)
         self._ping_timeout_in_seconds = 10
