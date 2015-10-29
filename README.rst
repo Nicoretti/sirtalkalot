@@ -11,9 +11,9 @@ SirTalkAlot
     :target: http://sirtalkalot.readthedocs.org/en/latest/?badge=latest
     :alt: Documentation Status
 
-.. image:: https://badge.waffle.io/Nicoretti/sirtalkalot.png?label=backlog&title=Backlog
+.. image:: https://badge.waffle.io/Nicoretti/sirtalkalot.png?label=ready&title=Ready
     :target: https://waffle.io/Nicoretti/sirtalkalot
-    :alt: 'Backlog'
+    :alt: 'Stories in Ready'
 
 
 SirTalkAlot is a Slack (RTM) based bot which provides a simple service based slack bot.
