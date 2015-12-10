@@ -15,7 +15,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
-        'sirtalkalot=bots:main',
+        'sirtalkalot=sirtalkalot:bots:main',
         ],
     },
     keywords=['slack', 'bot', 'api'],
