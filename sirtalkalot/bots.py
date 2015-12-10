@@ -27,8 +27,7 @@ import logging
 from collections import defaultdict
 
 import docopt
-
-from slackapi import SlackApi
+from libslack.slackapi import SlackApi
 
 from sirtalkalot import services
 from sirtalkalot import websocket
