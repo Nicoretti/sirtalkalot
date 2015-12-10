@@ -27,7 +27,6 @@ import logging
 from collections import defaultdict
 
 import docopt
-
 from slackapi import SlackApi
 
 from sirtalkalot import services
@@ -213,6 +212,9 @@ class SirTalkALot(SlackBot):
         args = docopt.docopt(doc=SirTalkALot.main.__doc__, version='0.0.1')
         sirtalkalot = SirTalkALot(args['--auth-token'])
 
+def main():
+    SirTalkALot.main()
+
 
 if __name__ == '__main__':
-    SirTalkALot.main()
+    main()
