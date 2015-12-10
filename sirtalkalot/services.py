@@ -85,13 +85,13 @@ class Help(AbstractService):
 
         Usage:
             help                    prints this help.
-            help --list-services    lists all available services.
+            help -services    lists all available services.
             help <servicename>      print the help of the specified service.
         """
         usage ="""
         Usage:
             help                    prints this help.
-            help --list-services    lists all available services.
+            help -services    lists all available services.
             help <servicename>      print the help of the specified service.
         """
         self._services = services
@@ -116,12 +116,12 @@ class Help(AbstractService):
             help <servicename>
 
         """
-        if '--list-services' in arguments:
+        if '-services' in arguments:
             services = ''
             for service in self._services:
                 services += '* {0}\n'.format(service)
             return help.format(services)
-        elif arguments[0] in self._services:
+        elif len(arguments) > 0 and arguments[0] in self._services:
             return self._services[arguments[0]].help
         else:
             return self.help
@@ -245,7 +245,7 @@ class ChuckNorris(AbstractService):
         Usage:
             chuck
         """
-        super().__init__('zen', usage, help)
+        super().__init__('chuck', usage, help)
 
     def handle_request(self, arguments):
         """

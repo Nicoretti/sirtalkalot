@@ -27,6 +27,7 @@ import logging
 from collections import defaultdict
 
 import docopt
+
 from slackapi import SlackApi
 
 from sirtalkalot import services
@@ -156,6 +157,7 @@ class SirTalkALot(SlackBot):
         self._ping_timeout_in_seconds = 10
         self._services = {}
         self._initialize_default_services()
+        self.register('message', self._message_handler)
 
     def _initialize_default_services(self):
         """
@@ -183,7 +185,8 @@ class SirTalkALot(SlackBot):
             service_name = arguments[0]
             arguments = arguments[1:]
             if service_name in self._services:
-                response = self._services[service_name].handel_request(arguments)
+                service = self._services[service_name]
+                response = service.handle_request(arguments)
                 self.send(response, rtm_message['channel'])
 
     def add_service(self, service):
@@ -211,6 +214,7 @@ class SirTalkALot(SlackBot):
         """
         args = docopt.docopt(doc=SirTalkALot.main.__doc__, version='0.0.1')
         sirtalkalot = SirTalkALot(args['--auth-token'])
+        sirtalkalot.connect()
 
 def main():
     SirTalkALot.main()

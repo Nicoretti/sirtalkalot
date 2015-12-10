@@ -24,6 +24,7 @@
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 import logging
 from queue import Queue
+
 from ws4py.client.threadedclient import WebSocketClient
 
 __version__ = "0.0.1"
@@ -44,13 +45,7 @@ class BasicWebSocketHandler(WebSocketClient):
         return self._input_queue
 
     def send(self, message):
-        return self._output_queue.put(message)
-
-    def run(self):
-        super().run()
-        while self._output_queue.not_empty:
-            message = self._output_queue.get()
-            super().send(message)
+        super().send(message)
 
     def connect(self, url):
         super().__init__(url)
@@ -58,6 +53,7 @@ class BasicWebSocketHandler(WebSocketClient):
         super().run_forever()
 
     def close(self):
+        self._sender_thread.join()
         self._ws_client.close(1000, 'Close Reason')
 
     def opened(self):
