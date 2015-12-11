@@ -38,7 +38,7 @@ class AbstractService(object):
         An abstract service implements the basic properties a service have to provide.
 
         :param name: name of the service.
-        :param usgae: a brief description how to call the service.
+        :param usage: a brief description how to call the service.
         :param help: a detailed help about parameters and options which can
                      be supplied with requests.
         :return:
@@ -64,6 +64,15 @@ class AbstractService(object):
     @property
     def help(self):
         return self._help
+
+    def init(self):
+        pass
+
+    def run(self):
+        pass
+
+    def shutdown(self):
+        pass
 
     def handle_request(self, arguments):
         """

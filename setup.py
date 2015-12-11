@@ -18,7 +18,11 @@ setup(
     description='A simple service based slack bot',
     entry_points={
         'console_scripts': [
-        'sirtalkalot=sirtalkalot.bots:main',
+        '   sirtalkalot=sirtalkalot.bots:main',
+        ],
+         'sirtalkalot.plugin.services': [
+            'Chuck = sirtalkalot.services:ChuckNorris',
+            'Zen = sirtalkalot.services:ZenOfPython',
         ],
     },
     keywords=['slack', 'bot', 'api'],

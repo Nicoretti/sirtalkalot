@@ -26,7 +26,9 @@ import json
 import logging
 from collections import defaultdict
 
+import pkg_resources
 import docopt
+
 from libslack.slackapi import SlackApi
 
 from sirtalkalot import services
@@ -162,12 +164,11 @@ class SirTalkALot(SlackBot):
         """
         Initialize and add the default services slackbot will provide.
         """
-        help_service = services.Help(self._services)
-        chuck_norris_jokes_service = services.ChuckNorris()
-        zen_of_python_service = services.ZenOfPython()
-        self.add_service(help_service)
-        self.add_service(chuck_norris_jokes_service)
-        self.add_service(zen_of_python_service)
+        for service in self._discover_all_service_plugins():
+            service_instance = service()
+            service_instance.init()
+            self.add_service(service_instance)
+        self.add_service(services.Help(self._services))
 
     def _message_handler(self, rtm_message):
         """
@@ -187,6 +188,18 @@ class SirTalkALot(SlackBot):
                 service = self._services[service_name]
                 response = service.handle_request(arguments)
                 self.send(response, rtm_message['channel'])
+
+    @staticmethod
+    def _discover_all_service_plugins():
+        services = []
+        for entry_point in pkg_resources.iter_entry_points('sirtalkalot.plugin.services'):
+            services.append(entry_point.load())
+        return services
+
+    def close(self):
+        for service in self._services:
+            service.shutdown()
+        super().close()
 
     def add_service(self, service):
         """
@@ -221,3 +234,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+
