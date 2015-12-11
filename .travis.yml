@@ -18,7 +18,7 @@ install:
 script:
   - ls
   - python setup.py test
-  - coverage run --source="bots.py,services.py,websocket.py" setup.py test
+  - coverage run --source="sirtalkalot.bots,sirtalkalot.services,sirtalkalot.websocket" setup.py test
   - ls -all
   - cat .coverage
 
