@@ -24,3 +24,11 @@ script:
 
 after_success: coveralls
 
+deploy:
+  provider: pypi
+  user: nicoretti
+  password:
+    secure: "ZcO/pcRI4d60cLOUPSJHPpv+lF+GBRYixDbR/W7hjeUbu5zknEYTb26nydLRXdbtOEgkQjLO0Jl5s/krUKygqdguU9svYSprqdAz81UsxAkN+OemAEvT7xon3dI9RPv1VIRNEVBRc3KV0T529bAw2Tl3ftR5iKrKBejXdGNXErM="
+  on:
+    tags: true
+
