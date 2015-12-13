@@ -11,6 +11,10 @@ SirTalkAlot
     :target: http://sirtalkalot.readthedocs.org/en/latest/?badge=latest
     :alt: Documentation Status
 
+.. image:: https://landscape.io/github/Nicoretti/sirtalkalot/master/landscape.svg?style=flat
+    :target: https://landscape.io/github/Nicoretti/sirtalkalot/master
+    :alt: Code Health
+
 .. image:: https://badge.waffle.io/Nicoretti/sirtalkalot.png?label=ready&title=Ready
     :target: https://waffle.io/Nicoretti/sirtalkalot
     :alt: 'Stories in Ready'
