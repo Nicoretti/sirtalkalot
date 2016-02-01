@@ -1,6 +1,11 @@
 SirTalkAlot
 ===========
 
+SirTalkAlot is a Slack (RTM) based bot which provides a simple service based slack bot.
+
+Status
+------
+
 .. image:: https://travis-ci.org/Nicoretti/sirtalkalot.svg?branch=master
     :target: https://travis-ci.org/Nicoretti/sirtalkalot
 
@@ -15,12 +20,20 @@ SirTalkAlot
     :target: https://landscape.io/github/Nicoretti/sirtalkalot/master
     :alt: Code Health
 
-.. image:: https://badge.waffle.io/Nicoretti/sirtalkalot.png?label=ready&title=Ready
+.. image:: https://img.shields.io/badge/pypi-available-blue.svg
+    :target: https://pypi.python.org/pypi/sirtalkalot
+    :alt: package on pypi
+
+Tickets
+-------
+
+.. image:: https://graphs.waffle.io/Nicoretti/sirtalkalot/throughput.svg
+    :target: https://waffle.io/Nicoretti/sirtalkalot/metrics
+    :alt: 'Throughput Graph'
+
+.. image:: https://badge.waffle.io/Nicoretti/sirtalkalot.png?label=ready&title=Ready&style=flat
     :target: https://waffle.io/Nicoretti/sirtalkalot
     :alt: 'Stories in Ready'
-
-
-SirTalkAlot is a Slack (RTM) based bot which provides a simple service based slack bot.
 
 Project Structure
 +++++++++++++++++
