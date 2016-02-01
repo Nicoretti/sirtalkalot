@@ -20,7 +20,7 @@ Status
     :target: https://landscape.io/github/Nicoretti/sirtalkalot/master
     :alt: Code Health
 
-.. image:: https://img.shields.io/badge/pypi-available-blue.svg
+.. image:: https://img.shields.io/badge/pypi%20package-available-blue.svg
     :target: https://pypi.python.org/pypi/sirtalkalot
     :alt: package on pypi
 
