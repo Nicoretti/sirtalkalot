@@ -1,6 +1,7 @@
+**Attention: This project is unmaintained, it only serves as archive**
+
 SirTalkAlot
 ===========
-
 SirTalkAlot is a Slack (RTM) based bot which provides a simple service based slack bot.
 
 Status
@@ -16,24 +17,9 @@ Status
     :target: http://sirtalkalot.readthedocs.org/en/latest/?badge=latest
     :alt: Documentation Status
 
-.. image:: https://landscape.io/github/Nicoretti/sirtalkalot/master/landscape.svg?style=flat
-    :target: https://landscape.io/github/Nicoretti/sirtalkalot/master
-    :alt: Code Health
-
 .. image:: https://img.shields.io/badge/pypi%20package-available-blue.svg
     :target: https://pypi.python.org/pypi/sirtalkalot
     :alt: package on pypi
-
-Tickets
--------
-
-.. image:: https://graphs.waffle.io/Nicoretti/sirtalkalot/throughput.svg
-    :target: https://waffle.io/Nicoretti/sirtalkalot/metrics
-    :alt: 'Throughput Graph'
-
-.. image:: https://badge.waffle.io/Nicoretti/sirtalkalot.png?label=ready&title=Ready&style=flat
-    :target: https://waffle.io/Nicoretti/sirtalkalot
-    :alt: 'Stories in Ready'
 
 Project Structure
 +++++++++++++++++
